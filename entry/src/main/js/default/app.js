@@ -736,7 +736,7 @@ function callAsyncSuccess(resolve, res, options) {
   resolve(res);
 }
 
-function callAsyncfail(reject, res, options) {
+function callAsyncFail(reject, res, options) {
   var _a, _b;
 
   (_a = options === null || options === void 0 ? void 0 : options.fail) === null || _a === void 0 ? void 0 : _a.call(options, res);
@@ -996,7 +996,7 @@ var toggleTabBar = function toggleTabBar(type) {
       };
 
       if (!currentData) {
-        callAsyncfail(reject, error, options);
+        callAsyncFail(reject, error, options);
       } else {
         page.$set('isShowTaroTabBar', type === 'show');
         callAsyncSuccess(resolve, res, options);
@@ -1022,7 +1022,7 @@ var setTabBarStyle = function setTabBarStyle() {
     };
 
     if (!currentData) {
-      callAsyncfail(reject, error, options);
+      callAsyncFail(reject, error, options);
     } else {
       var data = Object.assign({}, currentData);
       if (options.color) data.color = options.color;
@@ -1048,7 +1048,7 @@ var setTabBarItem = function setTabBarItem(options) {
     };
 
     if (!currentData) {
-      callAsyncfail(reject, error, options);
+      callAsyncFail(reject, error, options);
     } else {
       var index = options.index;
       var item = Object.assign({}, currentData.list[index]);
@@ -1173,6 +1173,15 @@ var components = {
     showtext: 'false',
     texton: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('On'),
     textoff: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('Off')
+  },
+  Input: {
+    'placeholder-color': Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('#99000000')
+  },
+  Video: {
+    speed: '1',
+    bindloadedmetadata: '',
+    bindprogress: '',
+    bindtap: ''
   },
   Picker: {
     selected: '',

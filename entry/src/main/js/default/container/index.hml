@@ -1,4 +1,5 @@
 <element name="container" src="./index.hml"></element>
+<element name="taro-scroll-view" src="./components-harmony/scroll-view/index.hml"></element>
 <element name="taro-switch" src="./components-harmony/switch/index.hml"></element>
 <element name="taro-video" src="./components-harmony/video/index.hml"></element>
 <element name="taro-picker" src="./components-harmony/picker/index.hml"></element>
@@ -43,21 +44,21 @@
 </block>
 
 <block if="{{i.nn == 'picker'}}">
-  <taro-picker mode="{{i.mode===undefined?'selector':i.mode}}" disabled="{{i.disabled}}" range="{{i.range}}" range-key="{{i.rangeKey}}" value="{{i.value}}" start="{{i.start}}" end="{{i.end}}" fields="{{i.fields===undefined?'day':i.fields}}" custom-item="{{i.customItem}}" name="{{i.name}}" @cancel="{{eh}}" @change="{{eh}}" @columnchange="{{eh}}" selected="{{i.selected}}" hours="{{i.hours}}" vibrate="{{i.vibrate===undefined?true:i.vibrate}}" lunar="{{i.lunar===undefined?false:i.lunar}}" lunarswitch="{{i.lunarswitch===undefined?false:i.lunarswitch}}" style="{{i.st}}" @click="{{eh}}" cls="{{i.cl}}"  id="{{i.uid}}">
+  <taro-picker mode="{{i.mode===undefined?'selector':i.mode}}" disabled="{{i.disabled}}" range="{{i.range}}" range-key="{{i.rangeKey}}" value="{{i.value}}" start="{{i.start}}" end="{{i.end}}" fields="{{i.fields===undefined?'day':i.fields}}" custom-item="{{i.customItem}}" name="{{i.name}}" @cancel="{{eh}}" @change="{{eh}}" @columnchange="{{eh}}" selected="{{i.selected}}" hours="{{i.hours}}" vibrate="{{i.vibrate===undefined?true:i.vibrate}}" lunar="{{i.lunar===undefined?false:i.lunar}}" lunarswitch="{{i.lunarswitch===undefined?false:i.lunarswitch}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     
   </taro-picker>
 </block>
 
 <block if="{{i.nn == 'switch'}}">
-  <taro-switch checked="{{i.checked===undefined?false:i.checked}}" disabled="{{i.disabled}}" type="{{i.type===undefined?'switch':i.type}}" color="{{i.color===undefined?'#04BE02':i.color}}" @change="{{eh}}" name="{{i.name}}" showtext="{{i.showtext===undefined?false:i.showtext}}" texton="{{i.texton===undefined?'On':i.texton}}" textoff="{{i.textoff===undefined?'Off':i.textoff}}" style="{{i.st}}" @click="{{eh}}" cls="{{i.cl}}"  id="{{i.uid}}">
+  <taro-switch checked="{{i.checked===undefined?false:i.checked}}" disabled="{{i.disabled}}" type="{{i.type===undefined?'switch':i.type}}" color="{{i.color===undefined?'#04BE02':i.color}}" @change="{{eh}}" name="{{i.name}}" showtext="{{i.showtext===undefined?false:i.showtext}}" texton="{{i.texton===undefined?'On':i.texton}}" textoff="{{i.textoff===undefined?'Off':i.textoff}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     
   </taro-switch>
 </block>
 
 <block if="{{i.nn == 'scroll-view'}}">
-  <scroll-view scroll-x="{{i.scrollX===undefined?false:i.scrollX}}" scroll-y="{{i.scrollY===undefined?false:i.scrollY}}" upper-threshold="{{i.upperThreshold===undefined?50:i.upperThreshold}}" lower-threshold="{{i.lowerThreshold===undefined?50:i.lowerThreshold}}" scroll-top="{{i.scrollTop}}" scroll-left="{{i.scrollLeft}}" scroll-into-view="{{i.scrollIntoView}}" scroll-with-animation="{{i.scrollWithAnimation===undefined?false:i.scrollWithAnimation}}" enable-back-to-top="{{i.enableBackToTop===undefined?false:i.enableBackToTop}}" @scrolltoupper="{{eh}}" @scrolltolower="{{eh}}" @scroll="{{eh}}" @touchstart="{{eh}}" @touchmove="{{eh}}" @touchend="{{eh}}" @touchcancel="{{eh}}" @longtap="{{eh}}" animation="{{i.animation}}" @animationstart="{{eh}}" @animationiteration="{{eh}}" @animationend="{{eh}}" @transitionend="{{eh}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
+  <taro-scroll-view scroll-x="{{i.scrollX===undefined?false:i.scrollX}}" scroll-y="{{i.scrollY===undefined?false:i.scrollY}}" upper-threshold="{{i.upperThreshold===undefined?50:i.upperThreshold}}" lower-threshold="{{i.lowerThreshold===undefined?50:i.lowerThreshold}}" scroll-top="{{i.scrollTop}}" scroll-left="{{i.scrollLeft}}" scroll-into-view="{{i.scrollIntoView}}" scroll-with-animation="{{i.scrollWithAnimation===undefined?false:i.scrollWithAnimation}}" enable-back-to-top="{{i.enableBackToTop===undefined?false:i.enableBackToTop}}" @scrolltoupper="{{eh}}" @scrolltolower="{{eh}}" @scroll="{{eh}}" @touchstart="{{eh}}" @touchmove="{{eh}}" @touchend="{{eh}}" @touchcancel="{{eh}}" @longtap="{{eh}}" animation="{{i.animation}}" @animationstart="{{eh}}" @animationiteration="{{eh}}" @animationend="{{eh}}" @transitionend="{{eh}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     <container root="{{i}}"></container>
-  </scroll-view>
+  </taro-scroll-view>
 </block>
 
 <block if="{{i.nn == 'static-image'}}">
@@ -73,8 +74,8 @@
 </block>
 
 <block if="{{i.nn == 'video'}}">
-  <taro-video src="{{i.src}}" duration="{{i.duration}}" controls="{{i.controls===undefined?true:i.controls}}" danmu-list="{{i.danmuList}}" danmu-btn="{{i.danmuBtn}}" enable-danmu="{{i.enableDanmu}}" autoplay="{{i.autoplay===undefined?false:i.autoplay}}" loop="{{i.loop===undefined?false:i.loop}}" muted="{{i.muted===undefined?false:i.muted}}" initial-time="{{i.initialTime===undefined?0:i.initialTime}}" page-gesture="{{i.pageGesture===undefined?false:i.pageGesture}}" direction="{{i.direction}}" show-progress="{{i.showProgress===undefined?true:i.showProgress}}" show-fullscreen-btn="{{i.showFullscreenBtn===undefined?true:i.showFullscreenBtn}}" show-play-btn="{{i.showPlayBtn===undefined?true:i.showPlayBtn}}" show-center-play-btn="{{i.showCenterPlayBtn===undefined?true:i.showCenterPlayBtn}}" enable-progress-gesture="{{i.enableProgressGesture===undefined?true:i.enableProgressGesture}}" object-fit="{{i.objectFit===undefined?'contain':i.objectFit}}" poster="{{i.poster}}" show-mute-btn="{{i.showMuteBtn===undefined?false:i.showMuteBtn}}" @play="{{eh}}" @pause="{{eh}}" @ended="{{eh}}" @timeupdate="{{eh}}" @fullscreenchange="{{eh}}" @waiting="{{eh}}" @error="{{eh}}" animation="{{i.animation}}" @animationstart="{{eh}}" @animationiteration="{{eh}}" @animationend="{{eh}}" @transitionend="{{eh}}" style="{{i.st}}" @click="{{eh}}" cls="{{i.cl}}"  id="{{i.uid}}">
-    <container root="{{i}}"></container>
+  <taro-video src="{{i.src}}" duration="{{i.duration}}" controls="{{i.controls===undefined?true:i.controls}}" danmu-list="{{i.danmuList}}" danmu-btn="{{i.danmuBtn}}" enable-danmu="{{i.enableDanmu}}" autoplay="{{i.autoplay===undefined?false:i.autoplay}}" loop="{{i.loop===undefined?false:i.loop}}" muted="{{i.muted===undefined?false:i.muted}}" initial-time="{{i.initialTime===undefined?0:i.initialTime}}" page-gesture="{{i.pageGesture===undefined?false:i.pageGesture}}" direction="{{i.direction}}" show-progress="{{i.showProgress===undefined?true:i.showProgress}}" show-fullscreen-btn="{{i.showFullscreenBtn===undefined?true:i.showFullscreenBtn}}" show-play-btn="{{i.showPlayBtn===undefined?true:i.showPlayBtn}}" show-center-play-btn="{{i.showCenterPlayBtn===undefined?true:i.showCenterPlayBtn}}" enable-progress-gesture="{{i.enableProgressGesture===undefined?true:i.enableProgressGesture}}" object-fit="{{i.objectFit===undefined?'contain':i.objectFit}}" poster="{{i.poster}}" show-mute-btn="{{i.showMuteBtn===undefined?false:i.showMuteBtn}}" @play="{{eh}}" @pause="{{eh}}" @ended="{{eh}}" @timeupdate="{{eh}}" @fullscreenchange="{{eh}}" @waiting="{{eh}}" @error="{{eh}}" animation="{{i.animation}}" @animationstart="{{eh}}" @animationiteration="{{eh}}" @animationend="{{eh}}" @transitionend="{{eh}}" speed="{{i.speed===undefined?1:i.speed}}" @loadedmetadata="{{eh}}" @progress="{{eh}}" @tap="{{eh}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
+    
   </taro-video>
 </block>
 
