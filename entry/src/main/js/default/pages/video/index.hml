@@ -1,0 +1,11 @@
+<element name="container" src="../../container/index.hml"></element>
+<element name="navbar" src="../../container/components-harmony/navbar/index.hml"></element>
+<element name="tabbar" src="../../container/components-harmony/tabbar/index.hml"></element>
+
+<div class="container">
+  <navbar title="{{taroNavBar.title}}" background="{{taroNavBar.background}}" text-style="{{taroNavBar.textStyle}}" st="{{taroNavBar.style}}"></navbar>
+  <div class="body" style="padding-top: 44px;padding-bottom: {{isShowTaroTabBar ? '56px' : '0'}}">
+    <container root="{{root}}"></container>
+  </div>
+  <tabbar if="{{isShowTaroTabBar}}" data="{{taroTabBar}}" selected="{{selected}}"></tabbar>
+</div>

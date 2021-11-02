@@ -1,0 +1,1 @@
+{"version":3,"file":"pages/index/index.css","sources":["webpack:///./src/pages/index/index.css"],"sourcesContent":[".block{\n  display: flex;\n  width: 100%;\n}\n.title{\n  display: flex;\n  width: 100%;\n}\n.switch-demo2{\n  textoff-color: #1f00ab;\n  texton-color: #ab0000;\n}\n\n"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;","sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"pages/video/index.css","sources":["webpack:///./src/pages/video/index.css"],"sourcesContent":[".block{\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 400px;\n}\n\n.video-box{\n  width: 100%;\n  height: 300px;\n}\n"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;","sourceRoot":""}
