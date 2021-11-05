@@ -1,0 +1,28 @@
+.container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 500px;
+  height: 1500px;
+}
+
+.flexbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  margin-top: 10px;
+}
+
+.pickerview{
+  width: 500px;
+  height: 400px;
+  margin-top: 10px;
+}
+
+
+/*# sourceMappingURL=index.css.map*/

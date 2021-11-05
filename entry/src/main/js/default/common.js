@@ -958,7 +958,7 @@ function equipCommonApis(taro, global) {
   !*** ../taro/packages/taro-harmony/dist/components/components-react.js ***!
   \*************************************************************************/
 /*! exports provided: Ad, Audio, Block, Button, Camera, Canvas, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Form, Icon, Image, Input, Label, List, ListItem, LivePlayer, Map, MovableArea, MovableView, Navigator, Picker, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, ScrollView, Slider, Slot, Span, Swiper, SwiperItem, Switch, TabBar, TabContent, Tabs, Text, Textarea, Video, View, WebView */
-/*! exports used: Picker, Switch, Text, Video, View */
+/*! exports used: Picker, PickerView, Switch, Text, Video, View */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -986,7 +986,7 @@ function equipCommonApis(taro, global) {
 /* unused harmony export MovableView */
 /* unused harmony export Navigator */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Picker; });
-/* unused harmony export PickerView */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PickerView; });
 /* unused harmony export PickerViewColumn */
 /* unused harmony export Progress */
 /* unused harmony export Radio */
@@ -998,14 +998,14 @@ function equipCommonApis(taro, global) {
 /* unused harmony export Span */
 /* unused harmony export Swiper */
 /* unused harmony export SwiperItem */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Switch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Switch; });
 /* unused harmony export TabBar */
 /* unused harmony export TabContent */
 /* unused harmony export Tabs */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Text; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Text; });
 /* unused harmony export Textarea */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Video; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return View; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Video; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return View; });
 /* unused harmony export WebView */
 var View = 'view';
 var Icon = 'icon';

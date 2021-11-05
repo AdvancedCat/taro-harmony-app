@@ -1081,6 +1081,71 @@ function removeTabBarBadge() {
    true && unsupport('removeTabBarBadge');
 }
 
+var startPullDownRefresh = function startPullDownRefresh(options) {
+  return new Promise(function (resolve) {
+    var taro = current.taro;
+    var page = taro.getCurrentInstance().page;
+    var res = {
+      errMsg: 'startPullDownRefresh:ok'
+    };
+    page.$set('isRefreshing', true);
+    callAsyncSuccess(resolve, res, options);
+  });
+};
+
+var stopPullDownRefresh = function stopPullDownRefresh(options) {
+  return new Promise(function (resolve) {
+    var taro = current.taro;
+    var page = taro.getCurrentInstance().page;
+    var res = {
+      errMsg: 'stopPullDownRefresh:ok'
+    };
+    page.$set('isRefreshing', false);
+    callAsyncSuccess(resolve, res, options);
+  });
+};
+/**
+ * 鸿蒙SDK API Version 6
+ * 将页面滚动到目标位置
+ * - 支持选择器（只支持id选择器，暂不支持class选择器、子选择器、后代选择器、跨自定义组件选择器、多选择器并集）
+ * - 滚动距离
+ * 文档地址 https://developer.harmonyos.com/cn/docs/documentation/doc-references/js-framework-syntax-js-0000000000611432
+ */
+
+
+var pageScrollTo = function pageScrollTo(options) {
+  return new Promise(function (resolve, reject) {
+    var _a;
+
+    var taro = current.taro;
+    var page = taro.getCurrentInstance().page;
+    var res = {
+      errMsg: 'pageScrollTo:ok'
+    };
+    var error = {
+      errMsg: 'pageScrollTo:fail'
+    };
+    var scrollTop = options.scrollTop,
+        _options$selector = options.selector,
+        selector = _options$selector === void 0 ? '' : _options$selector,
+        duration = options.duration;
+
+    try {
+      (_a = page.$rootElement()) === null || _a === void 0 ? void 0 : _a.scrollTo({
+        position: scrollTop,
+        id: selector.replace('#', ''),
+        duration: duration,
+        timingFunction: 'ease',
+        complete: function complete() {
+          callAsyncSuccess(resolve, res, options);
+        }
+      });
+    } catch (_) {
+      callAsyncFail(reject, error, options);
+    }
+  });
+};
+
 var apis = /*#__PURE__*/Object.freeze({
   __proto__: null,
   navigateTo: navigateTo,
@@ -1108,7 +1173,10 @@ var apis = /*#__PURE__*/Object.freeze({
   showTabBarRedDot: showTabBarRedDot,
   hidetTabBarRedDot: hidetTabBarRedDot,
   setTabBarBadge: setTabBarBadge,
-  removeTabBarBadge: removeTabBarBadge
+  removeTabBarBadge: removeTabBarBadge,
+  startPullDownRefresh: startPullDownRefresh,
+  stopPullDownRefresh: stopPullDownRefresh,
+  pageScrollTo: pageScrollTo
 });
 
 function initNativeApi(taro) {
@@ -1174,6 +1242,18 @@ var components = {
     texton: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('On'),
     textoff: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('Off')
   },
+  Progress: {
+    'active-color': Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('#09BB07'),
+    'background-color': Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('#EBEBEB'),
+    type: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('horizontal'),
+    'font-size': Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('25px'),
+    secondarypercent: '0',
+    clockwise: 'true'
+  },
+  Slider: {
+    showsteps: 'false',
+    showtips: 'false'
+  },
   Input: {
     'placeholder-color': Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('#99000000')
   },
@@ -1183,7 +1263,22 @@ var components = {
     bindprogress: '',
     bindtap: ''
   },
+  Image: {
+    alt: ''
+  },
+  Radio: {
+    'group-id': ''
+  },
   Picker: {
+    selected: '',
+    hours: '',
+    vibrate: 'true',
+    lunar: 'false',
+    lunarswitch: 'false'
+  },
+  PickerView: {
+    mode: Object(_tarojs_shared__WEBPACK_IMPORTED_MODULE_3__[/* singleQuote */ "r"])('selector'),
+    range: '',
     selected: '',
     hours: '',
     vibrate: 'true',
@@ -1213,11 +1308,11 @@ var hostConfig = {
     config.app[0] = 'onCreate';
     config.page[0] = 'onInit';
     config.page[1] = 'onDestroy';
-    config.page[5] = ['onActive', 'onInactive', 'onBackPress', 'onNewRequest', 'onStartContinuation', 'onSaveData', 'onRestoreData', 'onCompleteContinuation'];
+    config.page[5] = ['onActive', 'onInactive', 'onBackPress', 'onNewRequest', 'onStartContinuation', 'onSaveData', 'onRestoreData', 'onCompleteContinuation', 'onPullDownRefresh'];
     return config;
   },
   modifyPageObject: function modifyPageObject(config) {
-    var origin = config.onInit;
+    var originOnInit = config.onInit;
 
     config.onInit = function () {
       var _this2 = this;
@@ -1240,7 +1335,7 @@ var hostConfig = {
         }
       }); // 调用 onInit
 
-      origin.call(this, options); // 手动记录路由堆栈
+      originOnInit.call(this, options); // 手动记录路由堆栈
 
       var app = getApp();
       var pagePath = this.$taroPath.split('?')[0];
@@ -1259,7 +1354,10 @@ var hostConfig = {
         textStyle: window.navigationBarTextStyle || 'white',
         title: window.navigationBarTitleText || '',
         style: window.navigationStyle || 'default'
-      }); // 根据 app.config 初始化 tabbar
+      }); // 初始化下拉刷新组件
+
+      this.$set('enablePullDownRefresh', Boolean(window.enablePullDownRefresh));
+      this.$set('isRefreshing', false); // 根据 app.config 初始化 tabbar
 
       if (appConfig.tabBar) {
         var list = appConfig.tabBar.list;
@@ -1275,6 +1373,14 @@ var hostConfig = {
           }
         }
       }
+    };
+
+    var originOnPullDownRefresh = config.onPullDownRefresh;
+
+    config.onPullDownRefresh = function (e) {
+      this.$set('isRefreshing', e.refreshing); // 调用 onPullDownRefresh
+
+      originOnPullDownRefresh.call(this);
     };
   }
 };
@@ -5915,7 +6021,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var config = {"pages":["pages/picker/index","pages/video/index","pages/index/index"],"window":{"backgroundTextStyle":"light","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"WeChat","navigationBarTextStyle":"black"}};
+var config = {"pages":["pages/picker-view/index","pages/picker/index","pages/video/index","pages/index/index"],"window":{"backgroundTextStyle":"light","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"WeChat","navigationBarTextStyle":"black"}};
 _tarojs_runtime__WEBPACK_IMPORTED_MODULE_1__["window"].__taroAppConfig = config
 taroExport = (Object(_tarojs_plugin_framework_react_dist_runtime__WEBPACK_IMPORTED_MODULE_2__[/* createReactApp */ "a"])(_taro_node_modules_babel_loader_lib_index_js_app_js__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], react__WEBPACK_IMPORTED_MODULE_5__, react_dom__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], config))
 

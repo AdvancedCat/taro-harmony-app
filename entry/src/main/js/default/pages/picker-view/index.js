@@ -1,11 +1,11 @@
 var taroExport;
 
-(globalThis["webpackJsonp"] = globalThis["webpackJsonp"] || []).push([["pages/picker/index"],{
+(globalThis["webpackJsonp"] = globalThis["webpackJsonp"] || []).push([["pages/picker-view/index"],{
 
-/***/ "../taro/node_modules/babel-loader/lib/index.js!./src/pages/picker/index.jsx":
-/*!**************************************************************************!*\
-  !*** ../taro/node_modules/babel-loader/lib!./src/pages/picker/index.jsx ***!
-  \**************************************************************************/
+/***/ "../taro/node_modules/babel-loader/lib/index.js!./src/pages/picker-view/index.jsx":
+/*!*******************************************************************************!*\
+  !*** ../taro/node_modules/babel-loader/lib!./src/pages/picker-view/index.jsx ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -21,7 +21,7 @@ var taroExport;
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tarojs/components */ "../taro/packages/taro-harmony/dist/components/components-react.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.css */ "./src/pages/picker/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.css */ "./src/pages/picker-view/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
@@ -54,15 +54,15 @@ var Index = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "onChange", function (e) {
-      console.log("[picker] change  " + "e.detail: " + print(e.detail));
+      console.log("[picker-view] change  " + "e.detail: " + print(e.detail));
     });
 
     Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "onColumnChange", function (e) {
-      console.log("[picker] columnchange  " + "e.detail: " + print(e.detail));
+      console.log("[picker-view] columnchange  " + "e.detail: " + print(e.detail));
     });
 
     Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Object(_Users_xinhong_Code_Taro_Lib_taro_harmony_react_node_modules_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_this), "onCancel", function (e) {
-      console.log("[picker] cancel  " + "e.detail: " + print(e.detail));
+      console.log("[picker-view] cancel  " + "e.detail: " + print(e.detail));
     });
 
     return _this;
@@ -72,13 +72,18 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-        className: "block",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+        className: "container",
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
+          className: "flexbox",
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
+            children: "PickerView"
+          })
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "selector:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "selector",
             value: 3,
             range: ["1", "2", "3", "4"],
@@ -86,11 +91,11 @@ var Index = /*#__PURE__*/function (_Component) {
             onCancel: this.onCancel
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "disabled:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "selector",
             value: 1,
             range: ["1", "2", "3"],
@@ -99,11 +104,11 @@ var Index = /*#__PURE__*/function (_Component) {
             disabled: true
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "selector RK:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "selector",
             value: 1,
             range: [{
@@ -121,11 +126,11 @@ var Index = /*#__PURE__*/function (_Component) {
             onCancel: this.onCancel
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "multi:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "multiSelector",
             value: [0, 1, 1],
             range: [["a", "b", "c"], ["d", "e"], ["f", "g", "h"]],
@@ -134,37 +139,37 @@ var Index = /*#__PURE__*/function (_Component) {
             onColumnChange: this.onColumnChange
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "multi RK:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "multiSelector",
             value: [0, 1, 1],
             range: [[{
               id: 0,
-              name: 'A'
+              name: "A"
             }, {
               id: 1,
-              name: 'B'
+              name: "B"
             }, {
               id: 2,
-              name: 'C'
+              name: "C"
             }], [{
               id: 0,
-              name: 'D'
+              name: "D"
             }, {
               id: 1,
-              name: 'E'
+              name: "E"
             }], [{
               id: 0,
-              name: 'F'
+              name: "F"
             }, {
               id: 1,
-              name: 'G'
+              name: "G"
             }, {
               id: 2,
-              name: 'H'
+              name: "H"
             }]],
             rangeKey: "name",
             onChange: this.onChange,
@@ -172,22 +177,22 @@ var Index = /*#__PURE__*/function (_Component) {
             onColumnChange: this.onColumnChange
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "time:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "time",
             value: "12:30",
             onChange: this.onChange,
             onCancel: this.onCancel
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
             children: "date:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "date",
             start: "2018-6-25",
             end: "2030-12-31",
@@ -196,11 +201,11 @@ var Index = /*#__PURE__*/function (_Component) {
             onCancel: this.onCancel
           })]
         }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxs"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* View */ "f"], {
-          className: "inline-block",
+          className: "flexbox",
           children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Text */ "d"], {
-            children: "date:"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* Picker */ "a"], {
-            className: "picker",
+            children: "datetime:"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_tarojs_components__WEBPACK_IMPORTED_MODULE_7__[/* PickerView */ "b"], {
+            className: "pickerview",
             mode: "datetime",
             value: "2021-11-11-13-13",
             onChange: this.onChange,
@@ -223,10 +228,10 @@ function print(obj) {
 
 /***/ }),
 
-/***/ "./src/pages/picker/index.css":
-/*!************************************!*\
-  !*** ./src/pages/picker/index.css ***!
-  \************************************/
+/***/ "./src/pages/picker-view/index.css":
+/*!*****************************************!*\
+  !*** ./src/pages/picker-view/index.css ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -234,10 +239,10 @@ function print(obj) {
 
 /***/ }),
 
-/***/ "./src/pages/picker/index.jsx":
-/*!************************************!*\
-  !*** ./src/pages/picker/index.jsx ***!
-  \************************************/
+/***/ "./src/pages/picker-view/index.jsx":
+/*!*****************************************!*\
+  !*** ./src/pages/picker-view/index.jsx ***!
+  \*****************************************/
 /*! no exports provided */
 /*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -245,18 +250,18 @@ function print(obj) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/runtime.esm.js");
-/* harmony import */ var _taro_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../taro/node_modules/babel-loader/lib!./index.jsx */ "../taro/node_modules/babel-loader/lib/index.js!./src/pages/picker/index.jsx");
+/* harmony import */ var _taro_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../taro/node_modules/babel-loader/lib!./index.jsx */ "../taro/node_modules/babel-loader/lib/index.js!./src/pages/picker-view/index.jsx");
 
 
 var config = {};
 
 
-taroExport = (Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_taro_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'pages/picker/index', {root:{cn:[]}}, config || {}))
+taroExport = (Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["createPageConfig"])(_taro_node_modules_babel_loader_lib_index_js_index_jsx__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], 'pages/picker-view/index', {root:{cn:[]}}, config || {}))
 
 
 
 /***/ })
 
-},[["./src/pages/picker/index.jsx","runtime","vendors","common"]]]);
+},[["./src/pages/picker-view/index.jsx","runtime","vendors","common"]]]);
 export default taroExport;;
 //# sourceMappingURL=index.js.map

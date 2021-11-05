@@ -1,8 +1,10 @@
 <element name="container" src="./index.hml"></element>
 <element name="taro-scroll-view" src="./components-harmony/scroll-view/index.hml"></element>
+<element name="taro-image" src="./components-harmony/image/index.hml"></element>
 <element name="taro-switch" src="./components-harmony/switch/index.hml"></element>
 <element name="taro-video" src="./components-harmony/video/index.hml"></element>
 <element name="taro-picker" src="./components-harmony/picker/index.hml"></element>
+<element name="taro-picker-view" src="./components-harmony/picker-view/index.hml"></element>
 
 
 <block for="{{i in root.cn}}">
@@ -13,28 +15,10 @@
   </div>
 </block>
 
-<block if="{{i.nn == 'static-view'}}">
-  <div hover-class="{{i.hoverClass===undefined?'none':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?50:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?400:i.hoverStayTime}}" animation="{{i.animation}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <container root="{{i}}"></container>
-  </div>
-</block>
-
-<block if="{{i.nn == 'pure-view'}}">
-  <div style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <container root="{{i}}"></container>
-  </div>
-</block>
-
 <block if="{{i.nn == 'view'}}">
   <div hover-class="{{i.hoverClass===undefined?'none':i.hoverClass}}" hover-stop-propagation="{{i.hoverStopPropagation===undefined?false:i.hoverStopPropagation}}" hover-start-time="{{i.hoverStartTime===undefined?50:i.hoverStartTime}}" hover-stay-time="{{i.hoverStayTime===undefined?400:i.hoverStayTime}}" @touchstart="{{eh}}" @touchmove="{{eh}}" @touchend="{{eh}}" @touchcancel="{{eh}}" @longtap="{{eh}}" animation="{{i.animation}}" @animationstart="{{eh}}" @animationiteration="{{eh}}" @animationend="{{eh}}" @transitionend="{{eh}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     <container root="{{i}}"></container>
   </div>
-</block>
-
-<block if="{{i.nn == 'static-text'}}">
-  <text selectable="{{i.selectable===undefined?false:i.selectable}}" space="{{i.space}}" decode="{{i.decode===undefined?false:i.decode}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    <container root="{{i}}"></container>
-  </text>
 </block>
 
 <block if="{{i.nn == 'text'}}">
@@ -49,6 +33,12 @@
   </taro-picker>
 </block>
 
+<block if="{{i.nn == 'picker-view'}}">
+  <taro-picker-view value="{{i.value}}" indicator-style="{{i.indicatorStyle}}" indicator-class="{{i.indicatorClass}}" mask-style="{{i.maskStyle}}" mask-class="{{i.maskClass}}" @change="{{eh}}" name="{{i.name}}" mode="{{i.mode===undefined?'selector':i.mode}}" range="{{i.range}}" selected="{{i.selected}}" hours="{{i.hours}}" vibrate="{{i.vibrate===undefined?true:i.vibrate}}" lunar="{{i.lunar===undefined?false:i.lunar}}" lunarswitch="{{i.lunarswitch===undefined?false:i.lunarswitch}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
+    
+  </taro-picker-view>
+</block>
+
 <block if="{{i.nn == 'switch'}}">
   <taro-switch checked="{{i.checked===undefined?false:i.checked}}" disabled="{{i.disabled}}" type="{{i.type===undefined?'switch':i.type}}" color="{{i.color===undefined?'#04BE02':i.color}}" @change="{{eh}}" name="{{i.name}}" showtext="{{i.showtext===undefined?false:i.showtext}}" texton="{{i.texton===undefined?'On':i.texton}}" textoff="{{i.textoff===undefined?'Off':i.textoff}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     
@@ -61,16 +51,10 @@
   </taro-scroll-view>
 </block>
 
-<block if="{{i.nn == 'static-image'}}">
-  <image src="{{i.src}}" mode="{{i.mode===undefined?'scaleToFill':i.mode}}" lazy-load="{{i.lazyLoad===undefined?false:i.lazyLoad}}" style="{{i.st}}" class="{{i.cl}}"  id="{{i.uid}}">
-    
-  </image>
-</block>
-
 <block if="{{i.nn == 'image'}}">
-  <image src="{{i.src}}" mode="{{i.mode===undefined?'scaleToFill':i.mode}}" lazy-load="{{i.lazyLoad===undefined?false:i.lazyLoad}}" @error="{{eh}}" @load="{{eh}}" @touchstart="{{eh}}" @touchmove="{{eh}}" @touchend="{{eh}}" @touchcancel="{{eh}}" @longtap="{{eh}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
+  <taro-image src="{{i.src}}" mode="{{i.mode===undefined?'scaleToFill':i.mode}}" lazy-load="{{i.lazyLoad===undefined?false:i.lazyLoad}}" @error="{{eh}}" @load="{{eh}}" @touchstart="{{eh}}" @touchmove="{{eh}}" @touchend="{{eh}}" @touchcancel="{{eh}}" @longtap="{{eh}}" alt="{{i.alt}}" style="{{i.st}}" class="{{i.cl}}" @click="{{eh}}"  id="{{i.uid}}">
     
-  </image>
+  </taro-image>
 </block>
 
 <block if="{{i.nn == 'video'}}">
